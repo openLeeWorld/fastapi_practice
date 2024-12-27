@@ -1,0 +1,10 @@
+.\venv\Scripts\activate로 가상환경 활성화
+pip freeze > requirements.txt로 정리
+나중에 복구 시 pip install -r requirements.txt로 복구
+
+원하지 않는 패키지 제외)
+pip freeze | grep -v "unwanted-package" > requirements.txt
+
+프로덕션용 패키지만 기록)
+pip install pip-tools
+pip-compile --output-file=requirements.txt requirements.in
